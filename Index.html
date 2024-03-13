@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Candy wrapper</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<!-- <h1>Candy wrapper word maker</h1> -->
+    
+<p>App that helps you create words and sentences with candy and chocolate wrappers. Could also be used to make ransom notes.¯/_(ツ)_/¯</p>
+
+<label for="fname">Insert Text:</label>
+  <input id="my_input_text" type="text" id="fname" name="fname"><br><br>
+  <button id="myButton" type="button" onclick="ParseText()">Submit</button>
+
+
+
+
+
+
+    <div id="demoText"> </div>
+
+
+
+
+
+
+
+
+
+<style>
+
+    .ImgWrapper{
+    position: relative;
+       height: 40px;
+    }
+
+    .Letters{
+        max-height: 40px;
+    }
+
+    /** **/
+
+
+</style>
+
+
+
+<script>
+var log = console.log.bind(console);
+
+//var input_text = "Justin";
+
+
+//TEST
+
+function ParseText(){
+//Remove symbols
+//to lowercase
+//remove numbers
+//trim
+
+//document.getElementById("myButton").disabled = true;
+
+
+var each_letter;
+log("inside ParseText function");
+var input_text = document.getElementById("my_input_text").value;
+
+
+var random_number = Math.floor(Math.random() * 3);
+log("@: " + random_number)
+
+var i;
+$("#demoText").before("<div class=\"ImgWrapper\"> ");
+
+for (i = 0; i < input_text.length; i++){
+
+    each_letter = input_text.charAt(i);
+    //$("#demoText").before( "<img id=\"img" + i + "\"src=\"C:/Users/User/Documents/Docs KF/HTML/CandyWrapperStrings/Pics/Letters/" + each_letter + random_number + ".png\"> </img>" );
+    
+    //C:/Users/User/Documents/Docs KF/HTML/CandyWrapperStrings/Pics/Letters/" + each_letter + 0 + ".png
+    $("#demoText").before( "<img class=\"Letters\" id=\"img" + i + "\"src=\"../Pics/Letters/" + each_letter + 0 + ".png\"> </img>" );
+
+}  
+$("#demoText").before("<br>");
+
+
+
+}// END function ParseText
+
+
+</script>
+
+</body>
+</html>
